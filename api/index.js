@@ -22,8 +22,6 @@ app.get("/api/items", (req, res) => {
         const priceStr = element.price.toString();
         const price = priceStr.split(".");
 
-        console.log(price);
-
         items.push({
           id: element.id,
           title: element.title,

@@ -9,11 +9,8 @@
       <div class="col-lg-9">
         <div class="product-info">
           <h2 class="product-price">
-            {{ product.price }}
-            <img srcset="
-              assets/ic_shipping.png 1x,
-              assets/ic_shipping@2x.png 2x
-            " alt="Ícone de Carrinho">
+            {{ getPrice(product.price) }}
+            <img [hidden]="!product.free_shipping" srcset="assets/ic_shipping.png 1x,assets/ic_shipping@2x.png 2x" alt="Ícone de Carrinho">
           </h2>
           <p class="product-title">{{ product.title }}</p>
         </div>

@@ -30,9 +30,13 @@ app.get("/api/items", (req, res) => {
             amount: Number(price[0]),
             decimals: Number(price[1])
           },
+          address: {
+            state_id: element.address.state_id,
+            state_name: element.address.state_name,
+          },
           picture: element.thumbnail,
-          condition: 'as',
-          free_shipping: true
+          condition: element.condition,
+          free_shipping: element.shipping.free_shipping
         });
       });
 

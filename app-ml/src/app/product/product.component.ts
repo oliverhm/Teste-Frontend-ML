@@ -9,13 +9,17 @@ import { Router } from '@angular/router';
 export class ProductComponent implements OnInit {
   @Input() product: any;
 
-  constructor(private router: Router) {
-    console.log(this.product, 'eee');
-  }
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.product);
+  }
 
   goToProductDetails(productId: string): void {
     this.router.navigate([`items/${productId}`]);
+  }
+
+  getPrice(price: { amount: number; decimals: number; }): string {
+    return parseFloat(`${price.amount}.${price.decimals}`).toFixed(2);
   }
 }

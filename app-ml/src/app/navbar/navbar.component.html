@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="row">
+          <div class="col-lg-1 logo">
+            <a class="navbar-brand" href="/home">
+              <img srcset="assets/Logo_ML.png 1x, assets/Logo_ML@2x.png 2x" alt="Logo Mercado Livre">
+            </a>
+          </div>
+          <div class="col-lg-11 search">
+            <div class="input-group my-2">
+              <input type="text" class="form-control" placeholder="Nunca dejes de buscar" [formControl]="search">
+              <div class="input-group-append">
+                <button class="btn btn-search" type="submit" (click)="searchProduct()">
+                  <img srcset="assets/ic_Search.png 1x, assets/ic_Search@2x.png 2x" alt="Ícone de Pesquisa">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

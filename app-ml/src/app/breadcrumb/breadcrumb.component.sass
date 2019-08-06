@@ -1,0 +1,18 @@
+@import ../../theme/variables
+
+.section-breadcrumb
+  .breadcrumb
+    background-color: transparent
+    color: $gray-light
+    font-size: 14px
+    margin: $margin-base 0
+    padding: 0
+
+    .breadcrumb-item
+      + .breadcrumb-item
+        &::before
+          content: ">"
+          color: $gray-light
+
+      &.active
+        font-weight: bold

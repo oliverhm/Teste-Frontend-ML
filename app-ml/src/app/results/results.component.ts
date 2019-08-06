@@ -1,8 +1,8 @@
+import { IProduct, IResponseProductResults } from './../interface/items';
 import { ResultsService } from './results.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { flatMap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-results',
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./results.component.sass']
 })
 export class ResultsComponent implements OnInit {
-  products: any = [];
+  public products: IProduct[];
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +22,6 @@ export class ResultsComponent implements OnInit {
       .pipe(
         flatMap(params => this.resultsService.getItemsByQuery(params.search))
       )
-      .subscribe((response: any) => this.products = response.items);
+      .subscribe((response: IResponseProductResults) => this.products = response.items);
   }
 }

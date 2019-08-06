@@ -1,22 +1,22 @@
-<app-breadcrumb></app-breadcrumb>
+<app-breadcrumb *ngIf="product"></app-breadcrumb>
 
-<section class="section-product-details">
+<section class="section-product-details" *ngIf="product">
   <div class="card card-product-details">
     <div class="card-body">
       <div class="row">
         <div class="col-lg-7">
-          <div class="product-image" *ngIf="product">
+          <div class="product-image">
             <img [src]="product.picture" class="img-fluid" alt="Imagem do Produto">
           </div>
         </div>
         <div class="col-lg-5">
-          <p class="product-sold">Nuevo - {{ product.sold_quantity }} vendidos</p>
+          <p class="product-sold">{{ getCondition(product.condition) }} - {{ product.sold_quantity }} vendidos</p>
           <h2 class="product-title">{{ product.title }}</h2>
           <h1 class="product-price">$ {{ getPrice(product.price) }}</h1>
           <button class="btn btn-buy">Comprar</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="product.description">
         <div class="col-lg-8">
           <div class="product-info">
             <h2 class="product-label">Descripción del producto</h2>

@@ -1,5 +1,5 @@
-<app-breadcrumb></app-breadcrumb>
+<app-breadcrumb *ngIf="products"></app-breadcrumb>
 
-<section class="section-results">
+<section class="section-results" *ngIf="products">
   <app-product [product]="product" *ngFor="let product of products | slice:0:3"></app-product>
 </section>

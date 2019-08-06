@@ -1,3 +1,4 @@
+import { IProduct } from './../interface/items';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./product.component.sass']
 })
 export class ProductComponent implements OnInit {
-  @Input() product: any;
+  @Input() product: IProduct;
 
   constructor(private router: Router) {}
 

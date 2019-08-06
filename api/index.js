@@ -84,7 +84,7 @@ app.get("/api/items/:id", async (req, res) => {
       }
     };
 
-    const description = await apiHelper.callAPI(`${API_ITEMS}/${id}/description`);
+    const description = await apiHelper.callAPI(`${ENDPOINT_ITEMS}/${id}/description`);
     data.item.description = description.plain_text;
 
     res.status(200).send(data);

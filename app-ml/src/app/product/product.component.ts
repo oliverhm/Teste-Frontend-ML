@@ -11,9 +11,7 @@ export class ProductComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-    console.log(this.product);
-  }
+  ngOnInit() {}
 
   goToProductDetails(productId: string): void {
     this.router.navigate([`items/${productId}`]);

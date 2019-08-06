@@ -1,3 +1,4 @@
+import { ProductDetailsService } from './product-details/product-details.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -27,7 +28,7 @@ import { ResultsService } from './results/results.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ResultsService],
+  providers: [ResultsService, ProductDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

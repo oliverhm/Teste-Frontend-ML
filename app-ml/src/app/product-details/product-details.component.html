@@ -5,7 +5,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-lg-7">
-          <div class="product-image">
+          <div class="product-image" *ngIf="product">
             <img [src]="product.picture" class="img-fluid" alt="Imagem do Produto">
           </div>
         </div>

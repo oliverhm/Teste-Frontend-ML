@@ -2,20 +2,42 @@
 
 .card-product-details
   .card-body
+    color: $text-color
     padding: $padding-base
+
+    .product-sold
+      font-size: 14px
+
+    .product-title
+      font-size: 24px
+      font-weight: bold
+
+    .product-title,
+    .product-price
+      line-height: 100%
+      margin-bottom: 0
+      padding-bottom: 32px
+
+    .product-price
+      font-size: 46px
+      font-weight: 300
 
   .product-image
     padding-bottom: $padding-base
 
   .product-label
     font-size: 28px
+    font-weight: 300
     margin: 0
     padding-bottom: $padding-base
 
   .product-description
+    color: $gray-light
     font-size: 16px
+    font-weight: lighter
     margin: 0
 
   .btn-buy
     background-color: $blue
     color: $white
+    min-width: 100%;

@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+
 const cors = require("cors");
 app.use(cors());
 
@@ -7,7 +8,7 @@ const apiHelper = require('./api-helper');
 const port = 3000;
 
 app.listen(port, () => {
- console.log("Server running on port 3000");
+  console.log(`Server running on port ${port}`);
 });
 
 app.get("/api/items", (req, res) => {
@@ -45,11 +46,24 @@ app.get("/api/items", (req, res) => {
           name: "Oliver Henrique",
           lastname: "Maceira"
         },
-        categories: ['oi', 'oi', 'oi'],
+        categories: ['category 1', 'category 2', 'category 3'],
         items: items
       });
     })
     .catch(error => {
-      res.send(error)
+      res.send(error);
+    });
+});
+
+app.get("/api/items/:id", (req, res) => {
+  const id = req.params.id;
+
+  console.log('credo', 'https://api.mercadolibre.com' + '/items/​' + id)
+
+  apiHelper.callAPI('https://api.mercadolibre.com' + '/items/​' + id)
+    .then(response => console.log('response', response))
+    .catch(error => {
+      console.log(error, 'errr')
+      res.send(error);
     });
 });

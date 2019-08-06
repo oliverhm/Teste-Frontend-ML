@@ -6,13 +6,13 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="product-image">
-            <img src="https://placekitten.com/680/680" class="img-fluid" alt="Imagem do Produto">
+            <img [src]="product.picture" class="img-fluid" alt="Imagem do Produto">
           </div>
         </div>
         <div class="col-lg-5">
-          <p class="product-sold">Nuevo - 234 vendidos</p>
-          <h2 class="product-title">Deco Reverse Sombrero Oxford</h2>
-          <h1 class="product-price">$ 1.980.00</h1>
+          <p class="product-sold">Nuevo - {{ product.sold_quantity }} vendidos</p>
+          <h2 class="product-title">{{ product.title }}</h2>
+          <h1 class="product-price">$ {{ getPrice(product.price) }}</h1>
           <button class="btn btn-buy">Comprar</button>
         </div>
       </div>
@@ -21,10 +21,7 @@
           <div class="product-info">
             <h2 class="product-label">Descripción del producto</h2>
             <p class="product-description">
-              Lorem ipsum is placeholder text commonly used in the graphic,
-              print, and publishing industries for previewing,
-              layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic,
-              print, and publishing industries for previewing layouts and visual mockups.
+              {{ product.description }}
             </p>
           </div>
         </div>

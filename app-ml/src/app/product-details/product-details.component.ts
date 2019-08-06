@@ -9,6 +9,8 @@ import { flatMap } from 'rxjs/operators';
   styleUrls: ['./product-details.component.sass']
 })
 export class ProductDetailsComponent implements OnInit {
+  public product: any;
+
   constructor(
     private route: ActivatedRoute,
     private productDetailsService: ProductDetailsService
@@ -19,6 +21,10 @@ export class ProductDetailsComponent implements OnInit {
       .pipe(
         flatMap(params => this.productDetailsService.getItemById(params.id))
       )
-      .subscribe();
+      .subscribe((response: any) => this.product = response.item);
+  }
+
+  getPrice(price: { amount: number; decimals: number; }): string {
+    return parseFloat(`${price.amount}.${price.decimals}`).toFixed(2);
   }
 }

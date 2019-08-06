@@ -20,8 +20,7 @@ app.get("/api/items", (req, res) => {
       const items = [];
 
       results.forEach(element => {
-        const priceStr = element.price.toString();
-        const price = priceStr.split(".");
+        const price = formatPrice(element.price);
 
         items.push({
           id: element.id,
@@ -58,12 +57,38 @@ app.get("/api/items", (req, res) => {
 app.get("/api/items/:id", (req, res) => {
   const id = req.params.id;
 
-  console.log('credo', 'https://api.mercadolibre.com' + '/items/​' + id)
+  apiHelper.callAPI(encodeURI(`https://api.mercadolibre.com/items/${id}`))
+    .then(response => {
+      const price = formatPrice(response.price);
 
-  apiHelper.callAPI('https://api.mercadolibre.com' + '/items/​' + id)
-    .then(response => console.log('response', response))
+      res.json({
+        author: {
+          name: "Oliver Henrique",
+          lastname: "Maceira",
+        },
+        item: {
+          id: response.id,
+          title: response.title,
+          price: {
+            currency: response.currency_id,
+            amount: Number(price[0]),
+            decimals: Number(price[1]),
+          },
+          picture: response.pictures[0].secure_url,
+          condition: response.condition,
+          free_shipping: false,
+          sold_quantity: response.sold_quantity,
+          description: 'mimimim'
+        }
+      });
+    })
     .catch(error => {
-      console.log(error, 'errr')
+      console.error(error);
       res.send(error);
     });
 });
+
+function formatPrice(price) {
+  const priceStr = price.toString();
+  return priceStr.split(".");
+};

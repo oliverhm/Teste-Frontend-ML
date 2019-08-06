@@ -9,7 +9,7 @@
       <div class="product">
         <div class="product-info">
           <h2 class="product-price">
-            {{ getPrice(product.price) }}
+            $ {{ getPrice(product.price) }}
             <img [hidden]="!product.free_shipping" srcset="assets/ic_shipping.png 1x,assets/ic_shipping@2x.png 2x" alt="Ícone de Carrinho">
           </h2>
           <div class="product-address">

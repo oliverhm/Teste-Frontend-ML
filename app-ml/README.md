@@ -1,27 +1,33 @@
-# AppMl
+# Teste Frontend ML
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+## 1. Passos para começar
 
-## Development server
+### Clonando o Repositório
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`git clone https://github.com/oliverhm/Teste-Frontend-ML.git`
 
-## Code scaffolding
+### Acessando o repo do Frontend (a partir da raiz do projeto)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`cd app-ml/`
 
-## Build
+### Instalando as Dependências
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`npm install`
 
-## Running unit tests
+### Inicializando Frontend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`ng serve` ou `npm start`
 
-## Running end-to-end tests
+## 2. Iniciando o Backend
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Acessando o repo do Backend (a partir da raiz do projeto)
 
-## Further help
+`cd api/`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Instalando as Dependências
+
+`npm install`
+
+### Iniciando o Backend
+
+`node index.js`
